@@ -15,40 +15,37 @@
     </nav>
     <main class="container-fluid main-section">
         <h1 class="text-white">Propiedades en alquiler</h1>
-        <div class="container mt-5">
-            <div class="row">
-
-
-
-
-
-
-                
-                <script src="./assets/js/propiedades.js"></script>
-                <script>
-                    const propiedades = JSON.parse(JSON.stringify(propiedades_alquiler));
-                    const propiedadesContainer = document.querySelector('.row');
-                    propiedades.forEach(propiedad => {
-                        propiedadesContainer.innerHTML += `
-                            <div class="col-md-4 mb-4">
-                                <div class="card">
-                                    <img src="${propiedad.src}" class="card-img-top" alt="Imagen del departamento">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${propiedad.nombre}</h5>
-                                        <p class="card-text">${propiedad.descripcion}</p>
-                                        <p><i class="fas fa-map-marker-alt"></i> ${propiedad.ubicacion}</p>
-                                        <p><i class="fas fa-bed"></i> ${propiedad.habitaciones} Habitaciones | <i class="fas fa-bath"></i> ${propiedad.banos} Baños</p>
-                                        <p><i class="fas fa-dollar-sign"></i> ${propiedad.costo}</p>
-                                        ${propiedad.smoke ? '<p class="text-danger"><i class="fas fa-smoking"></i> Permitido fumar</p>' : '<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar</p>'}
-                                        ${propiedad.pets ? '<p class="text-success"><i class="fas fa-paw"></i> Mascotas permitidas</p>' : '<p class="text-danger"><i class="fas fa-ban"></i> No se permiten mascotas</p>'}
-                                    </div>
-                                </div>
-                            </div>`;
-                    });
-                </script>
-            </div>
-        </div>
+        
     </main>
+    <div class="container mt-5">
+        <div class="row">
+
+
+            
+            <script src="./assets/js/propiedades.js"></script>
+            <script>
+                const propiedades = JSON.parse(JSON.stringify(propiedades_alquiler));
+                const propiedadesContainer = document.querySelector('.row');
+                propiedades.forEach(propiedad => {
+                    propiedadesContainer.innerHTML += `
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="${propiedad.src}" class="card-img-top" alt="Imagen del departamento">
+                                <div class="card-body">
+                                    <h5 class="card-title">${propiedad.nombre}</h5>
+                                    <p class="card-text">${propiedad.descripcion}</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> ${propiedad.ubicacion}</p>
+                                    <p><i class="fas fa-bed"></i> ${propiedad.habitaciones} Habitaciones | <i class="fas fa-bath"></i> ${propiedad.banos} Baños</p>
+                                    <p><i class="fas fa-dollar-sign"></i> ${propiedad.costo}</p>
+                                    ${propiedad.smoke ? '<p class="text-danger"><i class="fas fa-smoking"></i> Permitido fumar</p>' : '<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar</p>'}
+                                    ${propiedad.pets ? '<p class="text-success"><i class="fas fa-paw"></i> Mascotas permitidas</p>' : '<p class="text-danger"><i class="fas fa-ban"></i> No se permiten mascotas</p>'}
+                                </div>
+                            </div>
+                        </div>`;
+                });
+            </script>
+        </div>
+    </div>
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/f5bdbb41e0.js" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
